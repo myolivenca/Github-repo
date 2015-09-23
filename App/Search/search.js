@@ -48,4 +48,13 @@
 
         vm.getUser();
 
-    }]);
+    }])
+    .directive('resultSection', function () {
+        return {
+            restrict: "A",
+            scope: {
+                block: "="
+            },
+            templateUrl: 'App/Search/section.html'
+        };
+    });

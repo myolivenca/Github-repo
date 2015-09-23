@@ -606,6 +606,11 @@ header {
   .List .list-item {
     min-height: 45px;
     border-bottom: 1px solid #f3f3ed; }
+    .List .list-item:after {
+        content: "";
+        display:block;
+        clear: both;
+    }
   .List .item-name {
     display: inline-block;
     margin-top: 12px;
@@ -614,17 +619,26 @@ header {
     .List .item-name:hover {
       color: #87a655; }
   .List .item-stats {
-    width: 120px;
+    width: 150px;
     display: inline-block;
     float: right; }
   .List ul {
     display: table;
     float: right;
-    color: #c9c9c3; }
+    color: #c9c9c3;
+    margin-top: 2px;
+  }
     .List ul li {
       display: inline-block;
       text-align: center;
-      margin-left: 10px; }
+      margin-left: 10px;
+      min-width: 40px;
+    }
+
+        .List ul li span {
+            font-size: 12px;
+            display: block;
+        }
 
 .AlertsToaster {
   position: fixed;
