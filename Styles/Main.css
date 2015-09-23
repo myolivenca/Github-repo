@@ -554,18 +554,29 @@ header {
     background-color: #87a655; }
   .Header h4 {
     line-height: 60px;
-    color: #fff; }
+    color: #fff; 
+
+  }
+  .Header h4 span {
+
+  }
   .Header .user-wrpp {
     height: 60px; }
-    .Header .user-wrpp img {
+    .Header .user-wrpp .img {
+      display: inline-block;
       height: 35px;
+      width: 35px;
       position: relative;
       top: 50%;
       -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
       transform: translateY(-50%);
-      border-radius: 3px; }
-    .Header .user-wrpp .span {
+      border-radius: 3px; 
+      overflow:hidden;
+      margin-left: 10px;
+    }
+    .Header .user-wrpp span {
+        float: right;
       height: 20px;
       display: inline-block;
       position: relative;
