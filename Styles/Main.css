@@ -564,8 +564,8 @@ header {
     height: 60px; }
     .Header .user-wrpp .img {
       display: inline-block;
-      height: 35px;
-      width: 35px;
+      height: 45px;
+      width: 45px;
       position: relative;
       top: 50%;
       -webkit-transform: translateY(-50%);
@@ -573,7 +573,10 @@ header {
       transform: translateY(-50%);
       border-radius: 3px; 
       overflow:hidden;
-      margin-left: 10px;
+      margin-right: 10px;
+    }
+    .Header .user-wrpp img {
+        max-width: 100%
     }
     .Header .user-wrpp span {
         float: right;
@@ -625,8 +628,8 @@ header {
 
 .AlertsToaster {
   position: fixed;
-  top: 80px;
-  left: -10px;
+  bottom: 80px;
+  right: -10px;
   z-index: 15; }
   .AlertsToaster .toast-item {
     border-radius: 5px;

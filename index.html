@@ -32,12 +32,15 @@
     <script src="Scripts/Vendor/jquery-2.1.4.js"></script>
     <script src="Scripts/Vendor/jquery-ui-1.11.4.js"></script>
     <script src="Scripts/Vendor/nicescroll.js"></script>
+    <script src="Scripts/Plugins/AlertsToaster/1.1.0/ec_alertstoaster.js"></script>
+
     <script src="App/angular.1.3.16.js"></script>
     <script src="App/angular-resource.js"></script>
     <script src="App/app.module.js"></script>
+    <script src="App/Search/search.js"></script>
     <link href="Styles/Main.css" rel="stylesheet" />
 </head>
-<body ng-app="app">
+<body ng-app="app" ng-controller="SearchCtrl as vm">
     <header>
         <div class="Header">
             <div class="container">
@@ -47,8 +50,8 @@
                     </div>
                     <div class="col-6 col-invert">
                         <div class="user-wrpp">
-                            <div class="img"><img src="" /></div>
-                            <span>name</span>
+                            <div class="img"><img ng-src="{{vm.avatar}}" /></div>
+                            <span>{{vm.username}}</span>
                         </div>
                     </div>
                 </div>
@@ -57,7 +60,6 @@
     </header>
     <div class="Main">
         <div class="Content">
-
             <div class="container">
                 <div class="grid-wrpp">
                     <div class="List">
@@ -75,7 +77,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </body>
 </html>
