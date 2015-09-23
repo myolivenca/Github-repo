@@ -22,12 +22,28 @@
             var userdata = response.data;
             vm.avatar = userdata.avatar_url;
             vm.username = userdata.name;
+
+            getRepo();
+        }
+
+        vm.onComplete = function (response) {
+            $(document.body).ec_alertsToaster({
+                message: 'data successful loaded',
+                type: "state-success",
+                toastLife: 2000
+            });
+            vm.feeds = response.data;
         }
 
         vm.getUser = function () {
             vm.userUrl = 'https://api.github.com/users/' + vm.user;
             return $http.get(vm.userUrl)
                 .then(vm.onUserComplete, vm.onError);
+        }
+        var getRepo = function () {
+            vm.repoUrl = 'https://api.github.com/users/' + vm.user + '/repos';
+            return $http.get(vm.repoUrl)
+                .then(vm.onComplete, vm.onError);
         }
 
         vm.getUser();
