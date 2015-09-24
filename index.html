@@ -67,19 +67,29 @@
     <div class="Main">
         <div class="Content">
             <div class="container">
-                <div class="grid-wrpp">
+                <div class="grid-wrpp add-space">
                     <div class="List" ng-show="!vm.seeDetails">
                         <div class="list-item" ng-repeat="block in vm.feeds | orderBy: '-stargazers_count' | limitTo: 20">
                             <div result-section block="block" on-click="vm.onClick(block)"></div>
                         </div>
                     </div>
-                    <div class="details" ng-if="vm.seeDetails">
-                        <p>title</p>
-                        <p>description</p>
-                        <p>created: <span></span></p>
-                        <a href="" target="_blank">repo url</a>
+                    <div class="details">
+                        <div class="item-name">title <span> &#x26AB; last updated</span> <span>days ago</span></div>
+                        <div class="item-stats">
+                            <ul>
+                                <li><i class="icon-star"></i><span>0</span></li>
+                                <li><i class="icon-eye"></i><span>0</span></li>
+                                <li><i class="icon-flow-branch"></i><span>0</span></li>
+                            </ul>
+                        </div>
+                        <p>&nbsp;</p>
+                        <p>description wf qwgf ehgw jefhjkw hfbkjwq efkjhg wekjfhb wkjhfeb kjqwhvfe kjhsb dcjbwjefb wh ergj wherigh wierh gilwherg jweij rglierljgweljrg ljer lgblrejgqwerg </p>
+                        <div class="stats-wrpp">
+                            <div class="col-6 col-center"><h4>javascript</h4><br /><p class="h1">56%</p></div>
+                            <div class="col-6 col-center"><h4>css</h4><br /><p class="h1">56%</p></div>
+                        </div>
                         <br />
-                        <a href="" class="btn">back</a>
+                        <a href="">Back to list</a>
                     </div>
                 </div>
             </div>

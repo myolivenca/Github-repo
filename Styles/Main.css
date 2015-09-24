@@ -67,7 +67,7 @@ a {
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
-  color: #fe661f;
+  color:#5b5b46;
   text-decoration: none; }
   a:hover {
     text-decoration: none;
@@ -308,8 +308,7 @@ h5,
   display: block;
   font-family: "Open Sans", Verdana, Helvetica, Sans-Serif;
   position: relative;
-  font-weight: 800;
-  color: #494647; }
+  }
   h1 span,
   h2 span,
   h3 span,
@@ -662,36 +661,68 @@ header {
         display:block;
         clear: both;
     }
-  .List .item-name {
+ 
+
+.Content .details {
+    margin: 20px 0;
+    padding-top: 15px;
+    border-top: 1px solid #f3f3ed;
+    color: #9da394;
+}
+.Content .item-name {
+    color: #87a655;
     display: inline-block;
     margin-top: 12px;
-    font-weight: 800;
-    cursor: pointer; }
-    .List .item-name:hover {
-      color: #87a655; }
-  .List .item-stats {
+    font-size: 17px;
+     }
+    .Content .item-name.link {
+        color:#5b5b46;
+        font-weight: 800;
+    }
+
+    .Content .item-name.link:hover {
+      color: #87a655;
+      cursor: pointer;
+    }
+
+    .Content .item-name span {
+        font-size: 12px;
+        color: #9da394;
+        font-weight: normal;
+    }
+  .Content .item-stats {
     width: 150px;
     display: inline-block;
     float: right; }
-  .List ul {
+  .Content ul {
     display: table;
     float: right;
     color: #c9c9c3;
     margin-top: 2px;
   }
-    .List ul li {
+    .Content ul li {
       display: inline-block;
       text-align: center;
       margin-left: 10px;
       min-width: 40px;
     }
 
-        .List ul li span {
+        .Content ul li span {
             font-size: 12px;
             display: block;
         }
 
+.Content .stats-wrpp {
+    padding: 20px;
+    background-color: #f3f3ed;
+    margin-top: 2%;
+}
 
+    .Content .stats-wrpp:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
 
 
 .AlertsToaster {
