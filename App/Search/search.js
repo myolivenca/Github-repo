@@ -1,21 +1,32 @@
 ﻿angular.module('app')
-    .controller('SearchCtrl', ['$http','$timeout', function ($http, $timeout) {
+    .factory('gitHubApi', function ($http) {
+        return {
+            getUser: function (user) {
+                return $http.get('https://api.github.com/users/' + user);
+            },
+            getRepo: function (repo) {
+                return $http.get('https://api.github.com/users/' + repo);
+            },
+        }
+    })
+    .controller('SearchCtrl', ['$http', '$timeout', 'gitHubApi', function ($http, $timeout, gitHubApi) {
         var timer;
 
         vm = this;
         vm.user = 'johnpapa';
+        vm.repoUrl = vm.user + '/repos';
         vm.focus = (vm.user) ? true : false;
-        
+
         vm.getUser = function () {
-            vm.userUrl = 'https://api.github.com/users/' + vm.user;
-            return $http.get(vm.userUrl)
+            gitHubApi.getUser(vm.user)
                 .then(vm.onUserComplete, vm.onError);
         }
-        var getRepo = function () {
-            vm.repoUrl = 'https://api.github.com/users/' + vm.user + '/repos';
-            return $http.get(vm.repoUrl)
+
+        vm.getRepo = function () {
+            gitHubApi.getRepo(vm.repoUrl)
                 .then(vm.onComplete, vm.onError);
         }
+        vm.getUser();
 
         vm.onClick = function (scope) {
             console.log(scope);
@@ -36,6 +47,14 @@
             vm.seeDetails = false;
         };
 
+        vm.onError = function () {
+            $(document.body).ec_alertsToaster({
+                message: 'error reading data',
+                type: 'state-warning',
+                toastLife: 3000
+            });
+        }
+
         vm.onComplete = function (response) {
             $(document.body).ec_alertsToaster({
                 message: 'data successful loaded',
@@ -43,6 +62,7 @@
                 toastLife: 2000
             });
             vm.feeds = response.data;
+
         }
 
         vm.onUserComplete = function (response) {
@@ -51,19 +71,11 @@
                 type: "state-success",
                 toastLife: 2000
             });
-            var userdata = response.data;
-            vm.avatar = userdata.avatar_url;
-            vm.username = userdata.name;
+            vm.userdata = response.data;
+            vm.seeDetails = false;
+            vm.repoUrl = vm.user + '/repos';
+            vm.getRepo();
 
-            getRepo();
-        }
-
-        vm.onError = function () {
-            $(document.body).ec_alertsToaster({
-                message: 'error reading data',
-                type: 'state-warning',
-                toastLife: 3000
-            });
         }
 
         vm.setFocus = function () {
