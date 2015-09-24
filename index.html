@@ -36,6 +36,7 @@
 
     <script src="App/angular.1.3.16.js"></script>
     <script src="App/angular-resource.js"></script>
+    <script src="App/angular-animate.js"></script>
     <script src="App/app.module.js"></script>
     <script src="App/Search/search.js"></script>
     <link href="Styles/Main.css" rel="stylesheet" />
@@ -68,12 +69,12 @@
         <div class="Content">
             <div class="container">
                 <div class="grid-wrpp add-space">
-                    <div class="List" ng-show="!vm.seeDetails">
+                    <div class="List" ng-if="!vm.seeDetails">
                         <div class="list-item" ng-repeat="block in vm.feeds | orderBy: '-stargazers_count' | limitTo: 20">
                             <div result-section block="block" on-click="vm.onClick(block)"></div>
                         </div>
                     </div>
-                    <div class="details" ng-show="vm.seeDetails">
+                    <div class="details" ng-if="vm.seeDetails">
                         <div class="item-name">{{vm.details.name}} <span> &#x26AB; last updated</span> <span>{{vm.details.created_at}}</span></div>
                         <div class="item-stats">
                             <ul>
