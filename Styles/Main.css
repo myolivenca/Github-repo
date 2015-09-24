@@ -584,18 +584,15 @@ header {
 }
 .form-block.active label {
     font-size: 0.8rem;
-    -webkit-transform: translateY(-140%);
-    -moz-transform: translateY(-140%);
-    -ms-transform: translateY(-140%);
-    -o-transform: translateY(-140%);
-    transform: translateY(-140%);
-    color: #26a69a;
-
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%);
 }
 
 .form-block.active input {
-    border-color:#26a69a;
-    box-shadow: 0 1px 0 0 #26a69a;
+    box-shadow: 0 1px 0 0 white;
 }
 
 /* MODULES */

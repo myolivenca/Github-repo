@@ -4,6 +4,7 @@
 
         vm = this;
         vm.user = 'johnpapa';
+        vm.focus = (vm.user) ? true : false;
         
         vm.onError = function() {
             $(document.body).ec_alertsToaster({
@@ -47,6 +48,15 @@
         }
 
         vm.getUser();
+
+        vm.setFocus = function () {
+            vm.focus = true;
+        };
+        vm.setBlur = function () {
+            if (vm.user == "") {
+                vm.focus = false;
+            }
+        };
 
     }])
     .directive('resultSection', function () {
