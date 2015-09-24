@@ -63,7 +63,7 @@
             <div class="container">
                 <div class="grid-wrpp">
                     <div class="List">
-                        <div class="list-item" ng-repeat="block in vm.feeds">
+                        <div class="list-item" ng-repeat="block in vm.feeds | orderBy: '-stargazers_count' | limitTo: 20">
                             <div result-section block="block"></div>
                         </div>
                     </div>
