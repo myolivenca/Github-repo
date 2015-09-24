@@ -45,10 +45,16 @@
         <div class="Header">
             <div class="container">
                 <div class="grid-wrpp">
-                    <div class="col-6">
+                    <div class="col-4 col-12-md">
                         <h4><i class="icon-github"></i>&nbsp;<span>Popular Repositories</span></h4>
                     </div>
-                    <div class="col-6 col-invert">
+                    <div class="col-4 col-6-md">
+                        <div class="form-block">
+                            <input type="text" ng-model="vm.user"  />
+                            <label>search by user login</label>
+                        </div>
+                    </div>
+                    <div class="col-4 col-6-md col-invert">
                         <div class="user-wrpp">
                             <div class="img"><img ng-src="{{vm.avatar}}" /></div>
                             <span>{{vm.username}}</span>

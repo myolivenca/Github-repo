@@ -543,14 +543,68 @@ header {
 .btn-update {
   margin-top: 11px; }
 
+
+.form-block {
+    position: relative;
+    margin-top: 20px;
+}
+
+.form-block input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+    outline: none;
+    height: 30px;
+    width: 100%;
+    font-size: 1rem;
+    margin: 0 0 15px 0;
+    padding: 0;
+    box-shadow: none;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    transition: all .3s;
+    z-index: 2;
+    position: relative;
+    color: white;
+}
+
+.form-block label {
+    color: #b9d193;
+    position: absolute;
+    bottom: 20px;
+    cursor: text;
+    -webkit-transition: .2s ease-out;
+    -moz-transition: .2s ease-out;
+    -o-transition: .2s ease-out;
+    -ms-transition: .2s ease-out;
+    transition: .2s ease-out;
+    z-index: 1;
+}
+.form-block.active label {
+    font-size: 0.8rem;
+    -webkit-transform: translateY(-140%);
+    -moz-transform: translateY(-140%);
+    -ms-transform: translateY(-140%);
+    -o-transform: translateY(-140%);
+    transform: translateY(-140%);
+    color: #26a69a;
+
+}
+
+.form-block.active input {
+    border-color:#26a69a;
+    box-shadow: 0 1px 0 0 #26a69a;
+}
+
 /* MODULES */
 .Header {
   background-color: #95b85e;
-  height: 60px;
+  min-height: 60px;
   color: #fff;
   position: relative; }
   .Header .container {
-    height: 60px;
     background-color: #87a655; }
   .Header h4 {
     line-height: 60px;
@@ -639,6 +693,9 @@ header {
             font-size: 12px;
             display: block;
         }
+
+
+
 
 .AlertsToaster {
   position: fixed;
