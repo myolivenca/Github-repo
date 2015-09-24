@@ -3,7 +3,7 @@ Show github repository by user login name
 
 
 Run the "website":
-To start project just run index.html in a local server. I believe that will work in any web server, sib«nce is just pure html javascript and css files.
+To start project just run index.html in a local server. I believe that will work in any web server, since is just pure html javascript and css files.
 
 
 Extras:
