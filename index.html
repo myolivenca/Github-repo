@@ -50,7 +50,7 @@
                     </div>
                     <div class="col-4 col-6-md">
                         <div class="form-block" ng-class="{'active': vm.focus}">
-                            <input type="text" ng-model="vm.user" ng-focus="vm.setFocus()" ng-blur="vm.setBlur()" />
+                            <input type="text" ng-model="vm.user" ng-keyup="vm.keyupSearch()" ng-focus="vm.setFocus()" ng-blur="vm.setBlur()" />
                             <label>search by user login</label>
                         </div>
                     </div>

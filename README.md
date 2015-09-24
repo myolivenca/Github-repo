@@ -1,4 +1,13 @@
 # Github-repo
 Show github repository by user login name
 
-To start project just run index.html in a local server
+
+Run the "website":
+To start project just run index.html in a local server.
+
+
+Extras:
+added a search box just for joy ;) 
+try look for "mhevery" or "joycepg"
+
+

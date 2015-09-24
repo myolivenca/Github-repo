@@ -23,6 +23,15 @@
             vm.details = scope;
         }
 
+        vm.keyupSearch = function () {
+            $timeout.cancel(timer);
+            timer = $timeout(function () {
+                if (vm.user) {
+                    vm.getUser();
+                }
+            }, 1000);
+        };
+
         vm.back = function () {
             vm.seeDetails = false;
         };
