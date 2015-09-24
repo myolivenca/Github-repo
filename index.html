@@ -70,7 +70,7 @@
                 <div class="grid-wrpp">
                     <div class="List" ng-show="!vm.seeDetails">
                         <div class="list-item" ng-repeat="block in vm.feeds | orderBy: '-stargazers_count' | limitTo: 20">
-                            <div result-section block="block"></div>
+                            <div result-section block="block" on-click="vm.onClick(block)"></div>
                         </div>
                     </div>
                     <div class="details" ng-if="vm.seeDetails">
