@@ -73,23 +73,26 @@
                             <div result-section block="block" on-click="vm.onClick(block)"></div>
                         </div>
                     </div>
-                    <div class="details">
-                        <div class="item-name">title <span> &#x26AB; last updated</span> <span>days ago</span></div>
+                    <div class="details" ng-show="vm.seeDetails">
+                        <div class="item-name">{{vm.details.name}} <span> &#x26AB; last updated</span> <span>{{vm.details.created_at}}</span></div>
                         <div class="item-stats">
                             <ul>
-                                <li><i class="icon-star"></i><span>0</span></li>
-                                <li><i class="icon-eye"></i><span>0</span></li>
-                                <li><i class="icon-flow-branch"></i><span>0</span></li>
+                                <li><i class="icon-star"></i><span>{{vm.details.stargazers_count}}</span></li>
+                                <li><i class="icon-eye"></i><span>{{vm.details.watchers_count}}</span></li>
+                                <li><i class="icon-flow-branch"></i><span>{{vm.details.forks_count}}</span></li>
                             </ul>
                         </div>
+                        <br />
+                        <a href="{{vm.details.html_url}}" target="_blank" class="txt-small">See it in gitHub</a>
                         <p>&nbsp;</p>
-                        <p>description wf qwgf ehgw jefhjkw hfbkjwq efkjhg wekjfhb wkjhfeb kjqwhvfe kjhsb dcjbwjefb wh ergj wherigh wierh gilwherg jweij rglierljgweljrg ljer lgblrejgqwerg </p>
+                        <p>{{vm.details.description}}</p>
+                        
                         <div class="stats-wrpp">
                             <div class="col-6 col-center"><h4>javascript</h4><br /><p class="h1">56%</p></div>
                             <div class="col-6 col-center"><h4>css</h4><br /><p class="h1">56%</p></div>
                         </div>
                         <br />
-                        <a href="">Back to list</a>
+                        <a href="" ng-click="vm.back()">Back to list</a>
                     </div>
                 </div>
             </div>

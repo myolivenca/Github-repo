@@ -23,6 +23,10 @@
             vm.details = scope;
         }
 
+        vm.back = function () {
+            vm.seeDetails = false;
+        };
+
         vm.onComplete = function (response) {
             $(document.body).ec_alertsToaster({
                 message: 'data successful loaded',
@@ -62,7 +66,7 @@
             }
         };
 
-        //vm.getUser();
+        vm.getUser();
     }])
     .directive('resultSection', function () {
         return {
